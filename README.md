@@ -1,7 +1,7 @@
 # Animate Presenter Plugin
 
 This [Voom Presenter](https://github.com/rx/presenters) plugins allows CSS animations.
-It is based on [animage.css](https://github.com/daneden/animate.css).
+It is based on [animate.css](https://github.com/daneden/animate.css).
 
 ## Usage
 
