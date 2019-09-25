@@ -113,7 +113,7 @@ function animateCSS(node, animations, wait, resolve, results) {
   }
 
   node.addEventListener('animationend', handleAnimationEnd);
-} // This event callback pushes its results into the results array and returns a promise.
+}
 
 function animate(options, params, _event, results) {
 

@@ -6,6 +6,7 @@ module Voom
     module Plugins
       module Animate
           class Action < DSL::Components::Actions::Base
+            INFINITE = 'infinite'
             attr_reader :element_id, :animations, :wait
             def initialize(element_id, *animations, wait: false, **attribs_, &block)
               super(type: :animate, **attribs_, &block)
@@ -16,7 +17,8 @@ module Voom
                 a[0] = a[0].downcase # replace with camelize_lower when available in dry-inflector 1.3
                 a
               end
-              @wait = wait
+              # obviosulay you can't wait for infinity
+              @wait = @animations.include?(INFINITE) ? false : wait
             end
         end
       end
