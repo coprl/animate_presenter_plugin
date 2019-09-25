@@ -11,4 +11,3 @@
 .rspec_status
 .idea
 node_modules
-lib/voom/presenters/plugins/animate/animate.js
