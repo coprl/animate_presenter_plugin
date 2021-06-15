@@ -18,7 +18,6 @@ module Coprl
                 if /(Delay|Repeat)(([2345]s?))/ =~ a
                   a = "#{$1}-#{$2}"
                 end
-                puts "animation: #{a}"
                 a[0] = a[0].downcase # replace with camelize_lower when available in dry-inflector 1.3
                 a
               end
