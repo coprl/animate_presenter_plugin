@@ -1,5 +1,6 @@
 require_relative 'animate/action'
-module Voom
+
+module Coprl
   module Presenters
     module Plugins
       module Animate
@@ -10,9 +11,12 @@ module Voom
         end
 
         module WebClientComponents
-          def render_header_animate(_pom, render:)
-            view_dir = File.join(__dir__, 'animate')
-            render.call :erb, :header, views: view_dir
+          def view_dir_animate(pom)
+            File.join(__dir__, '../../../..', 'views', 'components')
+          end
+
+          def render_header_animate(pom, render:)
+            render.call :erb, :animate_header, views: view_dir_animate(pom)
           end
         end
         module WebClientActions

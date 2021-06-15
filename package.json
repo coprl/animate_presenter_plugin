@@ -2,18 +2,18 @@
   "name": "animate_presenter_plugin",
   "version": "1.0.0",
   "description": "Voom Presenters CSS Animations",
-  "main": "voom/presenters/plugins/animate/animate.js",
+  "main": "assets/js/components/animate.js",
   "directories": {
-    "lib": "lib"
+    "views": "views"
   },
   "scripts": {
-    "build": "babel src -d lib",
-    "watch": "babel src -d lib --watch",
+    "build": "babel src -d views",
+    "watch": "babel src -d views --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rx/animate_presenter_plugin.git"
+    "url": "git+https://github.com/coprl/animate_presenter_plugin.git"
   },
   "keywords": [
     "Animate",
@@ -24,12 +24,12 @@
   "author": "Russell Edens",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rx/animate_presenter_plugin/issues"
+    "url": "https://github.com/coprl/animate_presenter_plugin/issues"
   },
-  "homepage": "https://github.com/rx/animate_presenter_plugin#readme",
+  "homepage": "https://github.com/coprl/animate_presenter_plugin#animate-presenter-plugin",
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2"
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5"
   }
 }

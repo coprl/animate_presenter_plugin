@@ -10,17 +10,28 @@ const VALID_ANIMATION_CLASSES = [
   'flash',
   'pulse',
   'rubberBand',
-  'shake',
+  'shakeX',
+  'shakeY',
   'headShake',
   'swing',
   'tada',
   'wobble',
   'jello',
+  'heartBeat',
+  'backInDown',
+  'backInLeft',
+  'backInRight',
+  'backInUp',
+  'backOutDown',
+  'backOutLeft',
+  'backOutRight',
+  'backOutUp',
   'bounceIn',
   'bounceInDown',
   'bounceInLeft',
   'bounceInRight',
   'bounceInUp',
+  'Bouncing exits',
   'bounceOut',
   'bounceOutDown',
   'bounceOutLeft',
@@ -35,6 +46,10 @@ const VALID_ANIMATION_CLASSES = [
   'fadeInRightBig',
   'fadeInUp',
   'fadeInUpBig',
+  'fadeInTopLeft',
+  'fadeInTopRight',
+  'fadeInBottomLeft',
+  'fadeInBottomRight',
   'fadeOut',
   'fadeOutDown',
   'fadeOutDownBig',
@@ -44,12 +59,19 @@ const VALID_ANIMATION_CLASSES = [
   'fadeOutRightBig',
   'fadeOutUp',
   'fadeOutUpBig',
+  'fadeOutTopLeft',
+  'fadeOutTopRight',
+  'fadeOutBottomRight',
+  'fadeOutBottomLeft',
+  'flip',
   'flipInX',
   'flipInY',
   'flipOutX',
   'flipOutY',
-  'lightSpeedIn',
-  'lightSpeedOut',
+  'lightSpeedInRight',
+  'lightSpeedInLeft',
+  'lightSpeedOutRight',
+  'lightSpeedOutLeft',
   'rotateIn',
   'rotateInDownLeft',
   'rotateInDownRight',
@@ -82,7 +104,6 @@ const VALID_ANIMATION_CLASSES = [
   'slideOutLeft',
   'slideOutRight',
   'slideOutUp',
-  'heartBeat',
   'delay-2s',
   'delay-3s',
   'delay-4s',
@@ -92,13 +113,14 @@ const VALID_ANIMATION_CLASSES = [
   'fast',
   'faster'];
 
-function animateCSS(node, animations, wait, resolve, results) {
 
-  node.classList.add('animated', ...animations);
+function animateCSS(node, animations, wait, resolve, results) {
+  var fq_animiations = animations.map(animation => `animate__${animation}`)
+  node.classList.add('animate__animated', ...fq_animiations);
 
   function handleAnimationEnd() {
     setTimeout(() => {
-      node.classList.remove('animated', ...animations);
+      node.classList.remove('animiate__animated', ...fq_animiations);
     }, AFTER_ANIMATION_TIMEOUT);
     node.removeEventListener('animationend', handleAnimationEnd);
 
