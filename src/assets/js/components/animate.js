@@ -31,7 +31,6 @@ const VALID_ANIMATION_CLASSES = [
   'bounceInLeft',
   'bounceInRight',
   'bounceInUp',
-  'Bouncing exits',
   'bounceOut',
   'bounceOutDown',
   'bounceOutLeft',
